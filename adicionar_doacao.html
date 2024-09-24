@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Adicionar Doação</h1>
+<form method="POST">
+    <div class="mb-3">
+        <label for="nome_doador" class="form-label">Nome do Doador</label>
+        <input type="text" class="form-control" id="nome_doador" name="nome_doador" required>
+    </div>
+    <div class="mb-3">
+        <label for="quantidade" class="form-label">Quantidade</label>
+        <input type="number" class="form-control" id="quantidade" name="quantidade" required>
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <input type="text" class="form-control" id="descricao" name="descricao" required>
+    </div>
+    <div class="mb-3">
+        <label for="data" class="form-label">Data</label>
+        <input type="text" class="form-control" id="data" name="data" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Adicionar Doação</button>
+</form>
+{% endblock %}

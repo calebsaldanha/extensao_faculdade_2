@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Doações e Voluntários</h1>
+
+<h2>Doações</h2>
+<a href="{{ url_for('adicionar_doacao') }}" class="btn btn-primary mb-3">Adicionar Doação</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome do Doador</th>
+            <th>Quantidade</th>
+            <th>Descrição</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for doacao in doacoes %}
+        <tr>
+            <td>{{ doacao.nome_doador }}</td>
+            <td>{{ doacao.quantidade }}</td>
+            <td>{{ doacao.descricao }}</td>
+            <td>{{ doacao.data }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Voluntários</h2>
+<a href="{{ url_for('adicionar_voluntario') }}" class="btn btn-primary mb-3">Adicionar Voluntário</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Contato</th>
+            <th>Disponibilidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for voluntario in voluntarios %}
+        <tr>
+            <td>{{ voluntario.nome }}</td>
+            <td>{{ voluntario.contato }}</td>
+            <td>{{ voluntario.disponibilidade }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
